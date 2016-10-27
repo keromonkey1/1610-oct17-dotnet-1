@@ -1,4 +1,4 @@
-﻿using MonsterApp.DataAccess.Models;
+﻿using Models = MonsterApp.DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -24,16 +24,16 @@ namespace MonsterApp.DataAccess
     /// 
     /// </summary>
     /// <returns></returns>
-    public List<Gender> GetGenders()
+    public List<Models.Gender> GetGenders()
     {
       try
       {
         var ds = GetDataDisconnected("select * from Monster.Gender;");
-        var genders = new List<Gender>();
+        var genders = new List<Models.Gender>();
 
         foreach (DataRow row in ds.Tables[0].Rows)
         {
-          genders.Add(new Gender()
+          genders.Add(new Models.Gender()
           {
             GenderId = int.Parse(row[0].ToString()),
             Name = row[1].ToString(),

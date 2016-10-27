@@ -18,7 +18,7 @@ namespace MonsterApp.DataAccess
     /// </summary>
     /// <param name="gender"></param>
     /// <returns></returns>
-    public bool InsertGender(Gender gender)
+    public bool InsertGender(Models.Gender gender)
     {
       var n = new SqlParameter("name", gender.Name);
       var query = "insert into Monster.Gender(GenderName, Active) values (@name, 1)";

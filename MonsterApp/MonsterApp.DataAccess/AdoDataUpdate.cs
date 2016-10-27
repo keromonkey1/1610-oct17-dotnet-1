@@ -10,7 +10,7 @@ namespace MonsterApp.DataAccess
 {
   public partial class AdoData
   {
-    public bool UpdateGender(Gender gender)
+    public bool UpdateGender(Models.Gender gender)
     {
       var query = "update Monster.Gender set Name = @name, Active = @active where GenderId = @id";
       var name = new SqlParameter("name", gender.Name);
